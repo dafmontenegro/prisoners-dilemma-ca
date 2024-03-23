@@ -1,1 +1,1 @@
-# prisoners-dilemma-ca
+# prisoners-dilemma-cellular-automata
