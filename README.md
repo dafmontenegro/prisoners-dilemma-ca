@@ -1,4 +1,5 @@
 # prisoners-dilemma-cellular-automata
+A Python project that explores the dynamics of cooperation and competition through the lens of game theory. By transforming cellular automata into strategies and employing classic tactics like Tit For Tat, the project investigates the performance of various strategies in the context of the Prisoner's Dilemma.
 
 ## Prisoner’s Dilemma
 Perhaps this is the most famous problem in game theory, which is fundamentally based on cooperation and where two subjects face the same dilemma of whether to cooperate or not, with the only certainty being that their subsequent reward or outcome will be closely related to the decision made by the other. This problem has different versions; however, for this project, we will use the Symmetric 2×2 PD With Ordinal Payoffs (explained in greater depth in the Stanford Encyclopedia of Philosophy [2]) as exemplified in the table below:
@@ -36,8 +37,10 @@ To explain this in the best way, we will make use of the definition provided by 
 
 > The simplest class of one-dimensional cellular automata. Elementary cellular automata have two possible values for each cell (0 or 1), and rules that depend only on nearest neighbor values. As a result, the evolution of an elementary cellular automaton can completely be described by a table specifying the state a given cell will have in the next generation based on the value of the cell to its left, the value the cell itself, and the value of the cell to its right. Since there are 2×2×2=2^3=8 possible binary states for the three cells neighboring a given cell, there are a total of 2^8=256 elementary cellular automata, each of which can be indexed with an 8-bit binary number (Wolfram 1983, 2002).[1]
 
-## References
+## Contributions
+Contributions to prisoners-dilemma-cellular-automata are welcome from researchers, developers, and enthusiasts interested in game theory, computational modeling, and strategic analysis. Collaborative efforts to expand the project's scope, refine simulation methodologies, and interpret results are encouraged and appreciated.
 
+## References
 [1] Wolfram Research, Inc. (s. f.). Elementary Cellular Automaton -- from Wolfram MathWorld. https://mathworld.wolfram.com/ElementaryCellularAutomaton.html
 
 [2] Prisoner’s Dilemma (Stanford Encyclopedia of Philosophy). (2019, 2 abril). https://plato.stanford.edu/entries/prisoner-dilemma/
