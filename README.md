@@ -146,6 +146,7 @@ import sys
 import math
 import numpy as np
 import matplotlib.pyplot as plt
+from typing import List, Dict, Tuple, Union
 
 sys.setrecursionlimit(1234567)
 ```
@@ -155,7 +156,57 @@ sys.setrecursionlimit(1234567)
 ### 3.2 class Rule
 
 ```python
+class Rule:
 
+    def __init__(self, number: int):
+        self.scores: List[float] = []
+        self.number: int = number
+        self.cellular_automata: str = f"{self.number:08b}"
+        self.binary_states: Dict[str, str] = {f"{7-i:03b}": self.cellular_automata[i] for i in range(8)}
+
+    def strategy(self, opponent: str) -> str:
+        return self.binary_states[opponent]
+
+    def vs(self, rule: "Rule", my_preload: str, op_preload: str, moves: int, my_score: int = 0, op_score: int = 0) -> Tuple[int, int]:
+        my_strategy: str = self.strategy(op_preload)
+        op_strategy: str = rule.strategy(my_preload)
+        if my_strategy == "1" == op_strategy:
+            my_score += 3
+            op_score += 3
+        elif my_strategy == "1" and op_strategy == "0":
+            op_score += 5
+        elif my_strategy == "0" and op_strategy == "1":
+            my_score += 5
+        elif my_strategy == "0" == op_strategy:
+            my_score += 1
+            op_score += 1
+        if moves < 2:
+            return my_score, op_score
+        else:
+            return self.vs(rule, my_preload[1:] + my_strategy, op_preload[1:] + op_strategy, moves - 1, my_score, op_score)
+
+    def gamex8(self, rule: "Rule", moves: int) -> None:
+        if self == rule:
+            rule = Rule(self.number)
+        for binary_state in self.binary_states:
+            my_score, op_score = self.vs(rule, binary_state, binary_state, moves)
+            self.scores.append(my_score / (moves * 5))
+            rule.scores.append(op_score / (moves * 5))
+
+    def gamex64(self, rule: "Rule", moves: int) -> None:
+        if self == rule:
+            rule = Rule(self.number)
+        for my_binary_state in self.binary_states:
+            for op_binary_state in self.binary_states:
+                my_score, op_score = self.vs(rule, my_binary_state, op_binary_state, moves)
+                self.scores.append(my_score / (moves * 5))
+                rule.scores.append(op_score / (moves * 5))
+
+    def perfect_score_percentage(self) -> float:
+        return sum(self.scores) / len(self.scores)
+
+    def cumulative_score_percentage(self) -> np.ndarray:
+        return np.cumsum(np.array(self.scores) / len(self.scores))
 ```
 
 ---
@@ -164,7 +215,38 @@ sys.setrecursionlimit(1234567)
 ### 3.3 class TitForTat(Rule)
 
 ```python
+class TitForTat(Rule):
 
+    def __init__(self):
+        super().__init__(170)
+        self.cooperation: List[str] = ["111", "101", "011", "001"]
+        self.number: str = "Tit For Tat"
+
+    def gamex4(self, rule: "Rule", moves: int) -> None:
+        if self == rule:
+            rule = TitForTat()
+        for binary_state in self.cooperation:
+            my_score, op_score = self.vs(rule, binary_state, binary_state, moves)
+            self.scores.append(my_score / (moves * 5))
+            rule.scores.append(op_score / (moves * 5))
+
+    def gamex8(self, rule: "Rule", moves: int) -> None:
+        self.gamex4(rule, moves)
+
+    def gamex32(self, rule: "Rule", moves: int) -> None:
+        if self == rule:
+            rule = TitForTat()
+        op_binary_states = self.binary_states
+        if isinstance(rule, TitForTat):
+            op_binary_states = self.cooperation
+        for my_binary_state in self.cooperation:
+            for op_binary_state in op_binary_states:
+                my_score, op_score = self.vs(rule, my_binary_state, op_binary_state, moves)
+                self.scores.append(my_score / (moves * 5))
+                rule.scores.append(op_score / (moves * 5))
+
+    def gamex64(self, rule: "Rule", moves: int) -> None:
+        self.gamex32(rule, moves)
 ```
 
 ---
@@ -172,8 +254,84 @@ sys.setrecursionlimit(1234567)
 ### 3.4 class PrisonersDilemma
 
 ```python
+class PrisonersDilemma:
 
+    def __init__(self, moves: int, binary_states: str = "x64", rule_numbers: List[int] = list(range(256))):
+        self.moves: int = moves
+        self.benchmark: Dict[int, Dict[str, Union[int, str]]] = {}
+        self.positions_table: List[Tuple[int, float]] = []
+        self.set_rules(rule_numbers)
+        self.binary_states: str = binary_states
 
+    def set_rules(self, rule_numbers: List[int]) -> None:
+        self.rules: Dict[int, Rule] = {}
+        for rule_number in rule_numbers:
+            self.rules[rule_number] = Rule(rule_number)
+
+    def compete(self) -> None:
+        contenders = list(self.rules.keys())
+        for rule in self.rules.values():
+            for contender in contenders:
+                if self.binary_states == "x64":
+                    rule.gamex64(self.rules[contender], self.moves)
+                elif self.binary_states == "x8":
+                    rule.gamex8(self.rules[contender], self.moves)
+            contenders = contenders[1:]
+        self.classify()
+
+    def classify(self) -> None:
+        perfect_scores_percentage = [(rule.number, rule.perfect_score_percentage()) for rule in self.rules.values()]
+        self.positions_table = sorted(perfect_scores_percentage, key=lambda rule_tuple: rule_tuple[1], reverse=True)
+
+    def tit_for_tat(self, rule_number: int) -> None:
+        self.rules = {rule_number: Rule(rule_number), "Tit For Tat": TitForTat()}
+        if self.binary_states == "x64":
+            self.rules["Tit For Tat"].gamex64(self.rules[rule_number], self.moves)
+        elif self.binary_states == "x8":
+            self.rules["Tit For Tat"].gamex8(self.rules[rule_number], self.moves)
+        self.classify()
+        self.show([self.best(), self.worst()])
+        del self.rules[self.worst()]
+        self.show([self.best()], ["Winner: "], ["blue"])
+
+    def best(self) -> int:
+        return self.positions_table[0][0]
+
+    def worst(self) -> int:
+        return self.positions_table[-1][0]
+
+    def remove_half(self) -> None:
+        half = int(len(self.positions_table) / 2)
+        best_half = self.positions_table[:half]
+        self.set_rules([rule_tuple[0] for rule_tuple in best_half])
+
+    def performance(self) -> Dict[int, Dict[str, Union[int, str]]]:
+        self.benchmark = {}
+        classifications = int(math.log2(len(self.rules)))
+        for i in range(classifications, -1, -1):
+            self.compete()
+            best = self.best()
+            worst = self.worst()
+            if len(self.rules) > 1:
+                self.show([best, worst])
+                self.benchmark[2**i] = {"best": best, "worst": worst}
+            else:
+                self.show([best], ["Winner: "], ["blue"])
+                self.benchmark[2**i] = {"best": best}
+            self.remove_half()
+        return self.benchmark
+
+    def show(self, rule_numbers: List[int], text: List[str] = ["Best: ", "Worst: "], colors: List[str] = ["lime", "tomato"]) -> None:
+        for i, rule_number in enumerate(rule_numbers):
+            len_rules = len(self.rules)
+            psp = self.rules[rule_number].perfect_score_percentage()
+            csp = self.rules[rule_number].cumulative_score_percentage()
+            plt.plot(csp, label=f"{text[i]}Rule {rule_number} (psp: {psp:.4f})", color=colors[i])
+            plt.title(f"Performance in {self.moves}-move games {self.binary_states} ({len_rules} rules)")
+            plt.xlabel("number of games")
+            plt.ylabel("cumulative perfect score percentage")
+            plt.legend()
+        plt.show()
 ```
 
 ## 4. Performance Metrics and Analysis
