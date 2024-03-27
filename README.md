@@ -1,5 +1,7 @@
-# prisoners-dilemma-cellular-automata
+# prisoners-dilemma-cellular-automata | Daniel Felipe Montenegro
 A Python project that explores the dynamics of cooperation and competition through the lens of game theory. By transforming **cellular automata into strategies** and employing classic tactics like **Tit For Tat,** the project investigates the performance of various strategies in the context of the **Prisoner's Dilemma.**
+
+[**Webpage**](https://dafmontenegro.com/prisoners-dilemma-cellular-automata/) | [**Repository**](https://github.com/dafmontenegro/prisoners-dilemma-cellular-automata)
 
 - [1. Theoretical Background](#1-theoretical-background)
   - [1.1 Prisoner’s Dilemma](#11-prisoners-dilemma)
