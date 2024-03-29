@@ -15111,7 +15111,66 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1 id="prisoners-dilemma-cellular-automata-%7C-Daniel-Felipe-Montenegro">prisoners-dilemma-cellular-automata | Daniel Felipe Montenegro<a class="anchor-link" href="#prisoners-dilemma-cellular-automata-%7C-Daniel-Felipe-Montenegro">&#182;</a></h1><p>A Python project that explores the dynamics of cooperation and competition through the lens of game theory. By transforming <strong>cellular automata into strategies</strong> and employing classic tactics like <strong>Tit For Tat,</strong> the project investigates the performance of various strategies in the context of the <strong>Prisoner's Dilemma.</strong></p>
-<p><a href="https://dafmontenegro.com/prisoners-dilemma-cellular-automata/"><strong>Webpage</strong></a> | <a href="https://github.com/dafmontenegro/prisoners-dilemma-cellular-automata"><strong>Repository</strong></a></p>
+<p><a href="https://dafmontenegro.com/prisoners-dilemma-cellular-automata/"><strong>Webpage</strong></a> | <a href="https://github.com/dafmontenegro/prisoners-dilemma-cellular-automata"><strong>Repository</strong></a> | <a href="https://github.com/dafmontenegro/prisoners-dilemma-cellular-automata/blob/master/prisoners_dilemma_cellular_automata.ipynb"><strong>Python Notebook</strong></a></p>
+<p>Aquí está la tabla de contenidos sin los enlaces:</p>
+<ul>
+<li><ol>
+<li>Theoretical Background</li>
+</ol>
+<ul>
+<li>1.1 Prisoner’s Dilemma</li>
+<li>1.2 Tit For Tat Strategy</li>
+<li>1.3 Cellular Automata</li>
+</ul>
+</li>
+<li><ol start="2">
+<li>Implementation and Simulation</li>
+</ol>
+<ul>
+<li>2.1 The 256 Rules as a Strategy<ul>
+<li>2.1.1 x8 Game Example:</li>
+<li>2.1.2 x64 Game Example:</li>
+</ul>
+</li>
+<li>2.2 The Anti-Automata</li>
+<li>2.3 Tit For Tat Rule</li>
+</ul>
+</li>
+<li><ol start="3">
+<li>Code</li>
+</ol>
+<ul>
+<li>3.1 Python Libraries and System Configuration</li>
+<li>3.2 class Rule</li>
+<li>3.3 class TitForTat(Rule)</li>
+<li>3.4 class PrisonersDilemma</li>
+</ul>
+</li>
+<li><ol start="4">
+<li>Performance Metrics and Analysis</li>
+</ol>
+<ul>
+<li>4.1 Perfect Score Percentage</li>
+<li>4.2 Cumulative Score Percentage</li>
+<li>4.3 Performance in 100-move games x64</li>
+<li>4.4 Tit For Tat performance vs best rule x64</li>
+<li>4.5 Performance in 100-move games x8</li>
+<li>4.6 Tit For Tat performance vs best rule x8</li>
+</ul>
+</li>
+<li><ol start="5">
+<li>Synthesis and Final Thoughts</li>
+</ol>
+</li>
+<li><ol start="6">
+<li>Contributions</li>
+</ol>
+</li>
+<li><ol start="7">
+<li>References</li>
+</ol>
+</li>
+</ul>
 
 </div>
 </div>
@@ -15299,7 +15358,7 @@ I must confess that this is *<strong>my favorite strategy,</strong>* which is wh
 <h4 id="2.1.1-x8-Game-Example:">2.1.1 x8 Game Example:<a class="anchor-link" href="#2.1.1-x8-Game-Example:">&#182;</a></h4><table>
 <thead>
 <tr>
-  <th style="text-align:center"></th>
+  <th style="text-align:center">10-moves game</th>
   <th style="text-align:center">010</th>
   <th style="text-align:center">101</th>
   <th style="text-align:center">010</th>
@@ -15375,7 +15434,7 @@ I must confess that this is *<strong>my favorite strategy,</strong>* which is wh
 <h4 id="2.1.2-x64-Game-Example:">2.1.2 x64 Game Example:<a class="anchor-link" href="#2.1.2-x64-Game-Example:">&#182;</a></h4><table>
 <thead>
 <tr>
-  <th style="text-align:center"></th>
+  <th style="text-align:center">10-moves game</th>
   <th style="text-align:center">101</th>
   <th style="text-align:center">011</th>
   <th style="text-align:center">110</th>
@@ -15518,7 +15577,7 @@ I must confess that this is *<strong>my favorite strategy,</strong>* which is wh
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="2.3-Tit-For-Tat-Rule">2.3 Tit For Tat Rule<a class="anchor-link" href="#2.3-Tit-For-Tat-Rule">&#182;</a></h3><p>For the creation of the Tit For Tat as a rule, a new class was created that inherits from the Rule class. Essentially, Tit For Tat is rule 70, as it corresponds to cooperating in all binary states that end in one.</p>
+<h3 id="2.3-Tit-For-Tat-Rule">2.3 Tit For Tat Rule<a class="anchor-link" href="#2.3-Tit-For-Tat-Rule">&#182;</a></h3><p>For the creation of the Tit For Tat as a rule, a new class was created that inherits from the Rule class. Essentially, <strong>Tit For Tat is rule 70</strong>, as it corresponds to cooperating in all binary states that end in one.</p>
 <table>
 <thead>
 <tr>
@@ -15862,7 +15921,50 @@ I must confess that this is *<strong>my favorite strategy,</strong>* which is wh
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.1-Perfect-Score-Percentage-and-Cumulative-Score-Percentage">4.1 Perfect Score Percentage and Cumulative Score Percentage<a class="anchor-link" href="#4.1-Perfect-Score-Percentage-and-Cumulative-Score-Percentage">&#182;</a></h3>
+<h3 id="4.1-Perfect-Score-Percentage">4.1 Perfect Score Percentage<a class="anchor-link" href="#4.1-Perfect-Score-Percentage">&#182;</a></h3><p>The Perfect Score Percentage can be calculated in <strong>two ways</strong>. The first is through confrontation and is based on dividing the score obtained by the hypothetical maximum possible score. Assuming a confrontation has <strong>100 moves</strong>, the maximum score would be <strong>500</strong>, which corresponds to <strong>5*100</strong>, because 5 is the maximum score that can be obtained in a move (where one does not cooperate and the opponent does). So, using the example tables above, specifically those in section <strong>2.1.2,</strong> the Perfect Score Percentage according to the rules would be as follows:</p>
+<table>
+<thead>
+<tr>
+  <th style="text-align:center"></th>
+  <th style="text-align:center">score</th>
+  <th style="text-align:center">p.s.p vs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:center"><strong>rule 12</strong></td>
+  <td style="text-align:center">29</td>
+  <td style="text-align:center">0,58</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>rule 21</strong></td>
+  <td style="text-align:center">14</td>
+  <td style="text-align:center">0,28</td>
+</tr>
+</tbody>
+</table>
+<p>The second way corresponds to the <strong>Perfect Score Percentage of a rule</strong>, that is, to the Rule class's Perfect Score Percentage. This is calculated from <code>Rule.scores</code>, which is an array containing the Perfect Score Percentages of all encounters corresponding to that rule. The calculation consists of <code>Rule.scores / len(Rule.scores)</code> since for it to be <strong>1</strong>, the rule must have had a perfect score in all its encounters. An example follows:</p>
+<table>
+<thead>
+<tr>
+  <th style="text-align:center">scores</th>
+  <th style="text-align:center">1</th>
+  <th style="text-align:center">2</th>
+  <th style="text-align:center">3</th>
+  <th style="text-align:center">p.s.p rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:center"><strong>rule 9</strong></td>
+  <td style="text-align:center">0,12</td>
+  <td style="text-align:center">0,21</td>
+  <td style="text-align:center">0,30</td>
+  <td style="text-align:center">0,21</td>
+</tr>
+</tbody>
+</table>
+
 </div>
 </div>
 </div>
@@ -15873,7 +15975,43 @@ I must confess that this is *<strong>my favorite strategy,</strong>* which is wh
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.2-Performance-in-100-move-games-x64">4.2 Performance in 100-move games x64<a class="anchor-link" href="#4.2-Performance-in-100-move-games-x64">&#182;</a></h3>
+<h3 id="4.2-Cumulative-Score-Percentage">4.2 Cumulative Score Percentage<a class="anchor-link" href="#4.2-Cumulative-Score-Percentage">&#182;</a></h3><p>The Cumulative Score Percentage is an array with the <strong>cumulative sum of the Perfect Score Percentage</strong>, which is calculated from <code>Rule.scores</code>, where it returns an array of the same length.</p>
+<table>
+<thead>
+<tr>
+  <th style="text-align:center"></th>
+  <th style="text-align:center">1</th>
+  <th style="text-align:center">2</th>
+  <th style="text-align:center">3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="text-align:center"><strong>rule 9</strong></td>
+  <td style="text-align:center">0,12</td>
+  <td style="text-align:center">0,21</td>
+  <td style="text-align:center">0,30</td>
+</tr>
+<tr>
+  <td style="text-align:center"><strong>c.s.p</strong></td>
+  <td style="text-align:center">0,12</td>
+  <td style="text-align:center">0,33</td>
+  <td style="text-align:center">0,63</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="4.3-Performance-in-100-move-games-x64">4.3 Performance in 100-move games x64<a class="anchor-link" href="#4.3-Performance-in-100-move-games-x64">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -16047,7 +16185,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.3-Tit-For-Tat-performance-vs-best-rule-x64">4.3 Tit For Tat performance vs best rule x64<a class="anchor-link" href="#4.3-Tit-For-Tat-performance-vs-best-rule-x64">&#182;</a></h3>
+<h3 id="4.4-Tit-For-Tat-performance-vs-best-rule-x64">4.4 Tit For Tat performance vs best rule x64<a class="anchor-link" href="#4.4-Tit-For-Tat-performance-vs-best-rule-x64">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -16115,7 +16253,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.4-Performance-in-100-move-games-x8">4.4 Performance in 100-move games x8<a class="anchor-link" href="#4.4-Performance-in-100-move-games-x8">&#182;</a></h3>
+<h3 id="4.5-Performance-in-100-move-games-x8">4.5 Performance in 100-move games x8<a class="anchor-link" href="#4.5-Performance-in-100-move-games-x8">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -16289,7 +16427,7 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="4.5-Tit-For-Tat-performance-vs-best-rule-x8">4.5 Tit For Tat performance vs best rule x8<a class="anchor-link" href="#4.5-Tit-For-Tat-performance-vs-best-rule-x8">&#182;</a></h3>
+<h3 id="4.6-Tit-For-Tat-performance-vs-best-rule-x8">4.6 Tit For Tat performance vs best rule x8<a class="anchor-link" href="#4.6-Tit-For-Tat-performance-vs-best-rule-x8">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -16357,7 +16495,9 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="5.-Contributions">5. Contributions<a class="anchor-link" href="#5.-Contributions">&#182;</a></h2><p>Contributions to prisoners-dilemma-cellular-automata are welcome from researchers, developers, and enthusiasts interested in game theory, computational modeling, and strategic analysis. Collaborative efforts to expand the project's scope, refine simulation methodologies, and interpret results are encouraged and appreciated.</p>
+<h2 id="5.-Synthesis-and-Final-Thoughts">5. Synthesis and Final Thoughts<a class="anchor-link" href="#5.-Synthesis-and-Final-Thoughts">&#182;</a></h2><p>I firmly stand by the belief that <strong>Tit For Tat is the best strategy</strong>, not only because in essence Tit For Tat is not a cellular automata (so it is natural to note that competition goes both ways without any guarantee), but also because *<strong>I love Tit For Tat as a philosophy of life</strong>*.</p>
+<p>What motivated me to do this project were not only the <strong>four success qualities</strong> developed by Robert Axelrod in his research, but also the fascinating conclusion of how *<strong>cooperation can be, in some contexts, the most important differentiator;</strong>* not to mention that the most successful strategies were not those that sought to take advantage of their opponent, but those that <strong>understood that mutual benefit can always take us further.</strong> An example of this in this project is <strong>the anti-automata which performed terribly in all tests</strong> even though it was supposed to have the winning strategy.</p>
+<p>So, beyond this simulation, *<strong>I love to keep the idea that where we all win, we also win ourselves</strong><em>, and not as popularly believed that in order to win, the other must lose. </em><em>Cooperation is one of the things that I am most passionate about studying in life,</em>* so thank you for reading about this small project, and don't hesitate that in the future we will be able to cooperate together <strong>not only to achieve a common good, but to achieve a general good.</strong></p>
 
 </div>
 </div>
@@ -16369,9 +16509,21 @@ class="
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="6.-References">6. References<a class="anchor-link" href="#6.-References">&#182;</a></h2><p>[1] Wolfram Research, Inc. (s. f.). Elementary Cellular Automaton -- from Wolfram MathWorld. <a href="https://mathworld.wolfram.com/ElementaryCellularAutomaton.html">https://mathworld.wolfram.com/ElementaryCellularAutomaton.html</a></p>
-<p>[2] Prisoner’s Dilemma (Stanford Encyclopedia of Philosophy). (2019, 2 abril). <a href="https://plato.stanford.edu/entries/prisoner-dilemma/">https://plato.stanford.edu/entries/prisoner-dilemma/</a></p>
-<p>[3] Veritasium. (2023, 23 diciembre). What Game Theory Reveals About Life, The Universe, and Everything [Vídeo]. YouTube. <a href="https://www.youtube.com/watch?v=mScpHTIi-kM">https://www.youtube.com/watch?v=mScpHTIi-kM</a></p>
+<h2 id="6.-Contributions">6. Contributions<a class="anchor-link" href="#6.-Contributions">&#182;</a></h2><p><strong>Contributions to prisoners-dilemma-cellular-automata are welcome</strong> from researchers, developers, and enthusiasts interested in game theory, computational modeling, and strategic analysis. Collaborative efforts to expand the project's scope, refine simulation methodologies, and interpret results are <strong>encouraged and appreciated.</strong></p>
+
+</div>
+</div>
+</div>
+</div>
+<div  class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="7.-References">7. References<a class="anchor-link" href="#7.-References">&#182;</a></h2><p>[1] <strong>Wolfram Research, Inc. (s. f.). Elementary Cellular Automaton -- from Wolfram MathWorld.</strong> <a href="https://mathworld.wolfram.com/ElementaryCellularAutomaton.html">https://mathworld.wolfram.com/ElementaryCellularAutomaton.html</a></p>
+<p>[2] <strong>Prisoner’s Dilemma (Stanford Encyclopedia of Philosophy). (2019, 2 abril).</strong> <a href="https://plato.stanford.edu/entries/prisoner-dilemma/">https://plato.stanford.edu/entries/prisoner-dilemma/</a></p>
+<p>[3] <strong>Veritasium. (2023, 23 diciembre). What Game Theory Reveals About Life, The Universe, and Everything [Vídeo]. YouTube.</strong> <a href="https://www.youtube.com/watch?v=mScpHTIi-kM">https://www.youtube.com/watch?v=mScpHTIi-kM</a></p>
 
 </div>
 </div>
