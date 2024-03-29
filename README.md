@@ -1,7 +1,7 @@
 # prisoners-dilemma-cellular-automata | Daniel Felipe Montenegro
 A Python project that explores the dynamics of cooperation and competition through the lens of game theory. By transforming **cellular automata into strategies** and employing classic tactics like **Tit For Tat,** the project investigates the performance of various strategies in the context of the **Prisoner's Dilemma.**
 
-[**Webpage**](https://dafmontenegro.com/prisoners-dilemma-cellular-automata/) | [**Repository**](https://github.com/dafmontenegro/prisoners-dilemma-cellular-automata)
+[**Webpage**](https://dafmontenegro.com/prisoners-dilemma-cellular-automata/) | [**Repository**](https://github.com/dafmontenegro/prisoners-dilemma-cellular-automata) | [**Python Notebook**](https://github.com/dafmontenegro/prisoners-dilemma-cellular-automata/blob/master/prisoners_dilemma_cellular_automata.ipynb)
 
 - [1. Theoretical Background](#1-theoretical-background)
   - [1.1 Prisoner’s Dilemma](#11-prisoners-dilemma)
@@ -19,13 +19,15 @@ A Python project that explores the dynamics of cooperation and competition throu
   - [3.3 class TitForTat(Rule)](#33-class-titfortatrule)
   - [3.4 class PrisonersDilemma](#34-class-prisonersdilemma)
 - [4. Performance Metrics and Analysis](#4-performance-metrics-and-analysis)
-  - [4.1 Perfect Score Percentage and Cumulative Score Percentage](#41-perfect-score-percentage-and-cumulative-score-percentage)
-  - [4.2 Performance in 100-move games x64](#42-performance-in-100-move-games-x64)
-  - [4.3 Tit For Tat performance vs best rule x64](#43-tit-for-tat-performance-vs-best-rule-x64)
-  - [4.4 Performance in 100-move games x8](#44-performance-in-100-move-games-x8)
-  - [4.5 Tit For Tat performance vs best rule x8](#45-tit-for-tat-performance-vs-best-rule-x8)
-- [5. Contributions](#5-contributions)
-- [6. References](#6-references)
+  - [4.1 Perfect Score Percentage](#41-perfect-score-percentage)
+  - [4.2 Cumulative Score Percentage](#42-cumulative-score-percentage)
+  - [4.3 Performance in 100-move games x64](#43-performance-in-100-move-games-x64)
+  - [4.4 Tit For Tat performance vs best rule x64](#44-tit-for-tat-performance-vs-best-rule-x64)
+  - [4.5 Performance in 100-move games x8](#45-performance-in-100-move-games-x8)
+  - [4.6 Tit For Tat performance vs best rule x8](#46-tit-for-tat-performance-vs-best-rule-x8)
+- [5. Synthesis and Final Thoughts](#5-synthesis-and-final-thoughts)
+- [6. Contributions](#6-contributions)
+- [7. References](#7-references)
 
 ## 1. Theoretical Background
 
@@ -85,21 +87,21 @@ For rules to compete against each other, it's necessary that they have at least 
 
 #### 2.1.1 x8 Game Example:
 
-|             |    010    |    101    |    010    |    101    |    010    |    101    |    010    |    101    |    010    |    101    |        |
-| :---------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :----: |
-| **rule 12** |     1     |     0     |     1     |     0     |     1     |     0     |     1     |     0     |     1     |     0     |   20   |
-| **rule 21** |     1     |     0     |     1     |     0     |     1     |     0     |     1     |     0     |     1     |     0     |   20   |
-|             |  **010**  |  **101**  |  **010**  |  **101**  |  **010**  |  **101**  |  **010**  |  **101**  |  **010**  |  **101**  |        |
+| 10-moves game |    010    |    101    |    010    |    101    |    010    |    101    |    010    |    101    |    010    |    101    |        |
+|  :---------:  | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :----: |
+|  **rule 12**  |     1     |     0     |     1     |     0     |     1     |     0     |     1     |     0     |     1     |     0     |   20   |
+|  **rule 21**  |     1     |     0     |     1     |     0     |     1     |     0     |     1     |     0     |     1     |     0     |   20   |
+|               |  **010**  |  **101**  |  **010**  |  **101**  |  **010**  |  **101**  |  **010**  |  **101**  |  **010**  |  **101**  |        |
 
 > Game of 10 moves, same preload, x8 mode. A complete x8 game involves repeating the same process, but with all 8 possible binary states as preload.
 
 #### 2.1.2 x64 Game Example:
 
-|             |    101    |    011    |    110    |    100    |    000    |    000    |    001    |    010    |    100    |    000    |        |
-| :---------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :----: |
-| **rule 12** |     1     |     0     |     0     |     0     |     0     |     1     |     0     |     0     |     0     |     1     |   29   |
-| **rule 21** |     0     |     0     |     0     |     1     |     1     |     1     |     0     |     1     |     1     |     1     |   14   |
-|             |  **010**  |  **100**  |  **000**  |  **000**  |  **001**  |  **011**  |  **111**  |  **110**  |  **101**  |  **011**  |        |
+| 10-moves game |    101    |    011    |    110    |    100    |    000    |    000    |    001    |    010    |    100    |    000    |        |
+|  :---------:  | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :----: |
+|  **rule 12**  |     1     |     0     |     0     |     0     |     0     |     1     |     0     |     0     |     0     |     1     |   29   |
+|  **rule 21**  |     0     |     0     |     0     |     1     |     1     |     1     |     0     |     1     |     1     |     1     |   14   |
+|               |  **010**  |  **100**  |  **000**  |  **000**  |  **001**  |  **011**  |  **111**  |  **110**  |  **101**  |  **011**  |        |
 
 > Game of 10 moves, different preloads, x64 mode. A complete x64 game involves repeating the same process, but with all possible 64 pairings of binary states as preloads.
 
@@ -130,7 +132,7 @@ All this means that the 8 bits of the anti-automaton **are all 0** and that it c
 
 ### 2.3 Tit For Tat Rule
 
-For the creation of the Tit For Tat as a rule, a new class was created that inherits from the Rule class. Essentially, Tit For Tat is rule 70, as it corresponds to cooperating in all binary states that end in one.
+For the creation of the Tit For Tat as a rule, a new class was created that inherits from the Rule class. Essentially, **Tit For Tat is rule 70**, as it corresponds to cooperating in all binary states that end in one.
 
 |                           |  111  |  110  |  101  |  100  |  011  |  010  |  001  |  000  |
 | :-----------------------: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -340,12 +342,31 @@ class PrisonersDilemma:
 
 All the simulations shown below are performed with `moves = 100`, which means that each game with a default preload has 100 moves, and for each game, a **Perfect Score Percentage** is calculated, which is stored in `Rules.scores`. So, for example, if there are 256 rules competing in x64 mode, each one will have a vector of length **256 * 64 = 16384** (this is because they compete against all rules, even against themselves).
 
-### 4.1 Perfect Score Percentage and Cumulative Score Percentage
+### 4.1 Perfect Score Percentage
+The Perfect Score Percentage can be calculated in **two ways**. The first is through confrontation and is based on dividing the score obtained by the hypothetical maximum possible score. Assuming a confrontation has **100 moves**, the maximum score would be **500**, which corresponds to **5*100**, because 5 is the maximum score that can be obtained in a move (where one does not cooperate and the opponent does). So, using the example tables above, specifically those in section **2.1.2,** the Perfect Score Percentage according to the rules would be as follows:
 
+|             |   score   |  p.s.p vs |
+| :---------: |   :---:   |   :---:   |
+| **rule 12** |    29     |   0,58    |
+| **rule 21** |    14     |   0,28    |
+
+The second way corresponds to the **Perfect Score Percentage of a rule**, that is, to the Rule class's Perfect Score Percentage. This is calculated from `Rule.scores`, which is an array containing the Perfect Score Percentages of all encounters corresponding to that rule. The calculation consists of `Rule.scores / len(Rule.scores)` since for it to be **1**, the rule must have had a perfect score in all its encounters. An example follows:
+
+|   scores   |   1   |   2   |   3   | p.s.p rule |
+| :--------: | :---: | :---: | :---: | :--------: |
+| **rule 9** | 0,12  | 0,21  | 0,30  |    0,21    |
+
+### 4.2 Cumulative Score Percentage
+The Cumulative Score Percentage is an array with the **cumulative sum of the Perfect Score Percentage**, which is calculated from `Rule.scores`, where it returns an array of the same length.
+
+|            |   1   |   2   |   3   |
+| :--------: | :---: | :---: | :---: |
+| **rule 9** | 0,12  | 0,21  | 0,30  |
+|  **c.s.p** | 0,12  | 0,33  | 0,63  |
 
 ---
 
-### 4.2 Performance in 100-move games x64
+### 4.3 Performance in 100-move games x64
 
 ```python
 prisoners_dilemmax64 = PrisonersDilemma(moves, "x64")
@@ -354,13 +375,13 @@ performancex64 = prisoners_dilemmax64.performance()
 
 ---
 
-### 4.3 Tit For Tat performance vs best rule x64
+### 4.4 Tit For Tat performance vs best rule x64
 
 ```python
 prisoners_dilemmax64.tit_for_tat(performancex64[1]["best"])
 ```
 
-### 4.4 Performance in 100-move games x8
+### 4.5 Performance in 100-move games x8
 
 ```python
 prisoners_dilemmax8 = PrisonersDilemma(moves, "x8")
@@ -369,18 +390,26 @@ performancex8 = prisoners_dilemmax8.performance()
 
 ---
 
-### 4.5 Tit For Tat performance vs best rule x8
+### 4.6 Tit For Tat performance vs best rule x8
 
 ```python
 prisoners_dilemmax8.tit_for_tat(performancex8[1]["best"])
 ```
 
-## 5. Contributions
-Contributions to prisoners-dilemma-cellular-automata are welcome from researchers, developers, and enthusiasts interested in game theory, computational modeling, and strategic analysis. Collaborative efforts to expand the project's scope, refine simulation methodologies, and interpret results are encouraged and appreciated.
+## 5. Synthesis and Final Thoughts
 
-## 6. References
-[1] Wolfram Research, Inc. (s. f.). Elementary Cellular Automaton -- from Wolfram MathWorld. https://mathworld.wolfram.com/ElementaryCellularAutomaton.html
+I firmly stand by the belief that **Tit For Tat is the best strategy**, not only because in essence Tit For Tat is not a cellular automata (so it is natural to note that competition goes both ways without any guarantee), but also because ***I love Tit For Tat as a philosophy of life***.
 
-[2] Prisoner’s Dilemma (Stanford Encyclopedia of Philosophy). (2019, 2 abril). https://plato.stanford.edu/entries/prisoner-dilemma/
+What motivated me to do this project were not only the **four success qualities** developed by Robert Axelrod in his research, but also the fascinating conclusion of how ***cooperation can be, in some contexts, the most important differentiator;*** not to mention that the most successful strategies were not those that sought to take advantage of their opponent, but those that **understood that mutual benefit can always take us further.** An example of this in this project is **the anti-automata which performed terribly in all tests** even though it was supposed to have the winning strategy.
 
-[3] Veritasium. (2023, 23 diciembre). What Game Theory Reveals About Life, The Universe, and Everything [Vídeo]. YouTube. https://www.youtube.com/watch?v=mScpHTIi-kM
+So, beyond this simulation, ***I love to keep the idea that where we all win, we also win ourselves***, and not as popularly believed that in order to win, the other must lose. **Cooperation is one of the things that I am most passionate about studying in life,** so thank you for reading about this small project, and don't hesitate that in the future we will be able to cooperate together **not only to achieve a common good, but to achieve a general good.**
+
+## 6. Contributions
+**Contributions to prisoners-dilemma-cellular-automata are welcome** from researchers, developers, and enthusiasts interested in game theory, computational modeling, and strategic analysis. Collaborative efforts to expand the project's scope, refine simulation methodologies, and interpret results are **encouraged and appreciated.**
+
+## 7. References
+[1] **Wolfram Research, Inc. (s. f.). Elementary Cellular Automaton -- from Wolfram MathWorld.** https://mathworld.wolfram.com/ElementaryCellularAutomaton.html
+
+[2] **Prisoner’s Dilemma (Stanford Encyclopedia of Philosophy). (2019, 2 abril).** https://plato.stanford.edu/entries/prisoner-dilemma/
+
+[3] **Veritasium. (2023, 23 diciembre). What Game Theory Reveals About Life, The Universe, and Everything [Vídeo]. YouTube.** https://www.youtube.com/watch?v=mScpHTIi-kM
