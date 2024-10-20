@@ -1,4 +1,4 @@
-# prisoners-dilemma-cellular-automata | Daniel Felipe Montenegro
+# prisoners-dilemma-cellular-automata
 A Python project that explores the dynamics of cooperation and competition through the lens of game theory. By transforming **cellular automata into strategies** and employing classic tactics like **Tit For Tat,** the project investigates the performance of various strategies in the context of the **Prisoner's Dilemma.**
 
 [**Webpage**](https://montenegrodanielfelipe.com/projects/prisoners-dilemma-cellular-automata/) | [**Repository**](https://github.com/dafmontenegro/prisoners-dilemma-cellular-automata) | [**Python Notebook**](https://github.com/dafmontenegro/prisoners-dilemma-cellular-automata/blob/master/prisoners_dilemma_cellular_automata.ipynb)
@@ -31,7 +31,7 @@ A Python project that explores the dynamics of cooperation and competition throu
 
 ## Author
 
-- **Daniel Felipe Montenegro** [GitHub](https://github.com/dafmontenegro) | [Blog](https://www.youtube.com/@MiAmigoMelquiades) | [X](https://x.com/dafmontenegro)
+- **Daniel Felipe Montenegro** [Website](https://montenegrodanielfelipe.com/) | [GitHub](https://github.com/dafmontenegro)
 
 ## 1. Theoretical Background
 
@@ -378,55 +378,55 @@ performancex64 = prisoners_dilemmax64.performance()
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_25_0.png)
+![png](README_files/README_25_0.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_25_1.png)
+![png](README_files/README_25_1.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_25_2.png)
+![png](README_files/README_25_2.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_25_3.png)
+![png](README_files/README_25_3.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_25_4.png)
+![png](README_files/README_25_4.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_25_5.png)
+![png](README_files/README_25_5.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_25_6.png)
+![png](README_files/README_25_6.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_25_7.png)
+![png](README_files/README_25_7.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_25_8.png)
+![png](README_files/README_25_8.png)
     
 
 
@@ -439,13 +439,13 @@ prisoners_dilemmax64.tit_for_tat(performancex64[1]["best"])
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_27_0.png)
+![png](README_files/README_27_0.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_27_1.png)
+![png](README_files/README_27_1.png)
     
 
 
@@ -459,55 +459,55 @@ performancex8 = prisoners_dilemmax8.performance()
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_29_0.png)
+![png](README_files/README_29_0.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_29_1.png)
+![png](README_files/README_29_1.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_29_2.png)
+![png](README_files/README_29_2.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_29_3.png)
+![png](README_files/README_29_3.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_29_4.png)
+![png](README_files/README_29_4.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_29_5.png)
+![png](README_files/README_29_5.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_29_6.png)
+![png](README_files/README_29_6.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_29_7.png)
+![png](README_files/README_29_7.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_29_8.png)
+![png](README_files/README_29_8.png)
     
 
 
@@ -520,13 +520,13 @@ prisoners_dilemmax8.tit_for_tat(performancex8[1]["best"])
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_31_0.png)
+![png](README_files/README_31_0.png)
     
 
 
 
     
-![png](prisoners_dilemma_cellular_automata_files/prisoners_dilemma_cellular_automata_31_1.png)
+![png](README_files/README_31_1.png)
     
 
 
